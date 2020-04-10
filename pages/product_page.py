@@ -17,7 +17,7 @@ class ProductPage(BasePage):
     def check_message_about_product_in_baskect(self):
         message = self.browser.find_element(*ProductPageLocators.MESSAGE).text
         product_name = self.browser.find_element(*ProductPageLocators.PRODUCT_NAME_ON_PAGE).text
-        assert message == f"{product_name} был добавлен в вашу корзину.", "Not Found Message or Incorrect Product Name In Message"
+        assert message == f"{product_name} has been added to your basket.", "Not Found Message or Incorrect Product Name In Message"
 
     def check_product_price_in_message(self):
         product_price_in_message = self.browser.find_element(*ProductPageLocators.PRICE_IN_MESSAGE).text
