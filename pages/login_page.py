@@ -4,17 +4,11 @@ from .locators import LoginPageLocators, BasePageLocators
 
 
 class LoginPage(BasePage):
-    def create_and_check_register_new_user(self):
-        self.register_new_user()
-        self.should_be_authorized_user()
-
-
-    def register_new_user(self):
-        self.go_to_login_page()
-        self.browser.find_element(*LoginPageLocators.INPUT_REGISTER_EMAIL).send_keys(*LoginPageLocators.EMAIL)
-        self.browser.find_element(*LoginPageLocators.INPUT_REGISTER_PASSWORD).send_keys(*LoginPageLocators.PASSWORD)
-        self.browser.find_element(*LoginPageLocators.INPUT_CONFIRM_PASSWORD).send_keys(*LoginPageLocators.PASSWORD)
-        self.browser.find_element(*LoginPageLocators.BTN_REGISTER).click()
+    def register_new_user(self, email, password):
+        self.browser.find_element(*LoginPageLocators.FORM_REG_EMAIL).send_keys(email)
+        self.browser.find_element(*LoginPageLocators.FORM_REG_PASSWORD).send_keys(password)
+        self.browser.find_element(*LoginPageLocators.FORM_REG_PASSWORD_REPEAT).send_keys(password)
+        self.browser.find_element(*LoginPageLocators.BUTTON_REG).click()
 
 
     def should_be_authorized_user(self):

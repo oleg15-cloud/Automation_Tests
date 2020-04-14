@@ -20,6 +20,11 @@ class LoginPageLocators():
     BTN_REGISTER = (By.XPATH, "//button[@name='registration_submit']")
     EMAIL = str(time.time()) + "@fakemail.org"
     PASSWORD = str(time.time()) + "@fakemail.org"
+    FORM_REG_EMAIL = (By.CSS_SELECTOR, "#id_registration-email")
+    FORM_REG_PASSWORD = (By.CSS_SELECTOR, "#id_registration-password1")
+    FORM_REG_PASSWORD_REPEAT = (By.CSS_SELECTOR, "#id_registration-password2")
+    BUTTON_REG = (By.CSS_SELECTOR, "button[name ='registration_submit']")
+
 
 class ProductPageLocators():
     PRICE_ON_PAGE = (By.XPATH, "//div[@class='col-sm-6 product_main']/p[@class='price_color']")
